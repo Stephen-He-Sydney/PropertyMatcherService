@@ -1,0 +1,66 @@
+﻿<div class="modal fade" id="IsMatched" tabindex="-1" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Congratulation, the current property are matched</h4>
+            </div>
+            <div class="modal-body">
+                <p class="info">
+                    The inputs have satisfied matching rules
+                </p>
+            </div>
+            <div class="modal-footer no-border text-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="IsNotMatched" tabindex="-1" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Sorry, the current property are not matched</h4>
+            </div>
+            <div class="modal-body">
+                <p class="info">
+                    Please create your database first, or make sure your inputs satisfy the matching standard
+                </p>
+            </div>
+            <div class="modal-footer no-border text-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-controller="propertyMgtCtrl as vm" ng-init="vm.init()">
+    <form ng-submit="vm.verifyProperty()">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 form-group">
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 form-group">
+            <h4>Select existing AgencyCode</h4>
+            <select ng-init="vm.SelectedAgencyCode = 'OTBRE'" class="form-control" ng-change="vm.chooseAgencyCode()" ng-model="vm.SelectedAgencyCode">
+                <option value="OTBRE">OTBRE</option>
+                <option value="LRE">LRE</option>
+                <option value="CRE">CRE</option>
+            </select>
+            <br />
+            <h4>AgencyCode</h4>
+            <input type="text" ng-model="vm.model.AgencyCode" class="form-control" name="AgencyCode" />
+            <h4>Name</h4>
+            <input type="text" class="form-control" ng-model="vm.model.Name" name="Name" />
+            <h4>Address</h4>
+            <input type="text" class="form-control" ng-model="vm.model.Address" name="Address" />
+            <h4>Latitude</h4>
+            <input type="text" maxlength="2" class="form-control" ng-model="vm.model.Latitude" name="Latitude" />
+            <h4>Longitude</h4>
+            <input type="text" maxlength="2" class="form-control" ng-model="vm.model.Longitude" name="Longitude" />
+            <br />
+            <input type="submit" class="btn btn-block btn-primary" value="Verify" ng-click="vm.verifyProperty()" />
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 form-group">
+        </div>
+    </form>
+</div>
+

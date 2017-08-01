@@ -1,0 +1,18 @@
+﻿{
+  "Property":[
+    {
+      "AgencyCode": "OTBRE",
+      "Name": "*Super*-High! APARTMENTS (Sydney)",
+      "Address": "32 Sir John-Young Crescent, Sydney, NSW."
+    },
+    {
+      "AgencyCode": "LRE",
+      "Longitude": 22,
+      "Latitude": 33
+    },
+    {
+      "AgencyCode": "CRE",
+      "Name": "Apartments Summit The"
+    }
+  ]
+}
